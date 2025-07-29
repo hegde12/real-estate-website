@@ -37,6 +37,14 @@ for (let i = 0; i < navElemArr.length; i++) {
   });
 }
 
+function plusSlides(n, sliderId) {
+  const slider = document.getElementById(sliderId);
+  const slides = slider.querySelectorAll('.slide');
+  let current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+  slides[current].classList.remove('active');
+  let next = (current + n + slides.length) % slides.length;
+  slides[next].classList.add('active');
+}
 
 
 /**
